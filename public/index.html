@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Chat app using Socket.IO Nodejs jQuery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soles-chat</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sender.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,19 +16,40 @@
             <div class="chatArea">
                 <ul class="messages"></ul>
             </div>
-            <input class="inputMessage" placeholder="Type here..." />
-        </li>
-        <li class="login page">
-            <div class="form">
-                <h3 class="title">What's your nickname?</h3>
-                <input class="usernameInput" type="text" maxlength="14" />
+            <div class="bottom_wrapper clearfix">
+                <div class="message_input_wrapper">
+                    <input class="inputMessage" placeholder="Type your message here..." />
+                </div>
+                <div class="send_message">
+                    <div class="icon"></div>
+                    <div class="text" onclick="sendMs()">Send nhưng chưa làm xong</div>
+                </div>
             </div>
-        </li>
+            <div class="message_template">
+                <li class="message">
+                    <div class="avatar"></div>
+                    <div class="text_wrapper">
+                        <strong class="username"></strong>
+                        <div class="text"></div>
+                    </div>
+                </li>
+
+
+                <li class="login page">
+                    <div class="form">
+                        <h3 class="title">What's your nickname?</h3>
+                        <input class="usernameInput" type="text" maxlength="14" />
+                    </div>
+                </li>
     </ul>
+
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/main.js"></script>
+    <script src="js/sender.js"></script>
+
+
 </body>
 
 </html>
