@@ -28,9 +28,9 @@ $(function() {
     const addParticipantsMessage = (data) => {
         let message = '';
         if (data.numUsers === 1) {
-            message += `there's 1 participant`;
+            message += `Hiện đang có 1 người online`;
         } else {
-            message += `there are ${data.numUsers} participants`;
+            message += `Hiện đang có ${data.numUsers} người online`;
         }
         log(message);
     }
@@ -231,7 +231,7 @@ $(function() {
     socket.on('login', (data) => {
         connected = true;
         // Display the welcome message
-        const message = 'Welcome to Socket.IO Chat – ';
+        const message = ' Chào mừng bạn đã đến với Soles chat! ';
         log(message, {
             prepend: true
         });
@@ -248,7 +248,7 @@ $(function() {
 
     // Whenever the server emits 'user joined', log it in the chat body
     socket.on('user joined', (data) => {
-        log(`${data.username} joined`);
+        log(`${data.username} đã tham gia`);
         addParticipantsMessage(data);
     });
 
