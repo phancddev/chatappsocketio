@@ -4,7 +4,7 @@ const app = express();
 const path = require('path');
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-const port = window.origin
+const port = io.connect('https://chatappsocketio.vercel.app/');
 server.listen(port, () => {
     console.log('Server listening at port %d', port);
 });
