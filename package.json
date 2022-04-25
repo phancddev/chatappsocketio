@@ -1,0 +1,9 @@
+{
+    "name": "chatappsocket",
+    "version": "1.0.0",
+    "description": "chatapp using Nodejs, jquery, socket.io",
+    "dependencies": {
+        "express": "^4.17.3",
+        "socket.io": "^4.5.0"
+    }
+}
