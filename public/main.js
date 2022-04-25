@@ -270,11 +270,11 @@ $(function() {
     });
 
     socket.on('disconnect', () => {
-        log('you have been disconnected');
+        log('Bạn đã ngắt kết nối');
     });
 
     socket.on('reconnect', () => {
-        log('you have been reconnected');
+        log('Bạn đã kết nối');
         if (username) {
             socket.emit('add user', username);
         }
