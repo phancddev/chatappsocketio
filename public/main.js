@@ -51,6 +51,7 @@ $(function() {
         }
     }
 
+
     // Sends a chat message
     const sendMessage = () => {
         let message = $inputMessage.val();
@@ -64,6 +65,8 @@ $(function() {
             socket.emit('new message', message);
         }
     }
+
+
 
     // Log a message
     const log = (message, options) => {
@@ -191,7 +194,9 @@ $(function() {
         if (!(event.ctrlKey || event.metaKey || event.altKey)) {
             $currentInput.focus();
         }
+
         // When the client hits ENTER on their keyboard
+
         if (event.which === 13) {
             if (username) {
                 sendMessage();
@@ -202,6 +207,7 @@ $(function() {
             }
         }
     });
+
 
     $inputMessage.on('input', () => {
         updateTyping();
@@ -232,10 +238,13 @@ $(function() {
         addParticipantsMessage(data);
     });
 
+
     // Whenever the server emits 'new message', update the chat body
     socket.on('new message', (data) => {
         addChatMessage(data);
     });
+
+
 
     // Whenever the server emits 'user joined', log it in the chat body
     socket.on('user joined', (data) => {
